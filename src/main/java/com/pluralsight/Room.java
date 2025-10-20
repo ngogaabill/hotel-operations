@@ -1,20 +1,22 @@
 package com.pluralsight;
 
 public class Room {
-    //private final int roomNumbers = 50;
-    private boolean isAvailable;
-    private boolean isDirty;
-    private boolean isOccupied;
+    private int roomNumbers = 50;
+    // private HashMap<String,boolean> rooms;
+    private boolean isAvailable = true;
+    private boolean isDirty = false;
+    private boolean isOccupied = false;
     private double price;
 
-    public Room(){
+    public Room() {
 
     }
 
     public int getRoomNumbers() {
         return roomNumbers;
     }
-    public double getPrice(){
+
+    public double getPrice() {
         return price;
     }
 
@@ -27,6 +29,26 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return !isDirty && !isOccupied;
+    }
+
+    public void checkIn() {
+        System.out.println("Room Checked In");
+        isDirty = true;
+        isOccupied = true;
+        int i = roomNumbers - 1;
+
+    }
+
+    public void checkOut() {
+        System.out.println("Room Checked In");
+        cleanroom();
+        isDirty = false;
+        isOccupied = false;
+    }
+
+    public void cleanroom() {
+        System.out.println("Room is Being Cleaned");
+
     }
 }

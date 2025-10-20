@@ -32,7 +32,9 @@ public class Reservation {
             } else if (getRoomType().contains("double")) {
                 price = 124.0 * getNumberOfNights();
             }
-            price += (price / 0.1);
+            double weekendAddOns = price * 0.1;
+            System.out.println(weekendAddOns);
+            price += weekendAddOns;
         }
         return price;
     }

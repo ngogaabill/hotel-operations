@@ -43,8 +43,10 @@ public class Employee {
     }
 
     public void punchOut(double time) {
-        if(time == 0.0){
+        if (time == 0.0) {
             System.out.println("can't sign out");
-        }else hoursWorked = time - punchIn;
+        } else
+            System.out.println(name + " Punched out at : " + time + " worked total of " + (time - punchIn) + "hours");
+        hoursWorked = time - punchIn;
     }
 }

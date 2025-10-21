@@ -26,7 +26,9 @@ public class Main {
         System.out.println("Enter Punch Out Time:(HH:mm)");
         String timeOut = scanner.nextLine();
         double punchOutTime = convertStringToDecimal(timeOut);
-        employee.punchIn(punchOutTime);
+        employee.punchOut(punchOutTime);
+        System.out.println("You made total of "+ employee.getTotalPay());
+       // employee.getTotalPay();
 
     }
     public static double convertStringToDecimal(String s) {

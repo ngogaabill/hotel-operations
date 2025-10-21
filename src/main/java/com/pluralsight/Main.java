@@ -4,6 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,7 @@ public class Main {
         roomReservation();
         //employeePunchInOut();
     }
+
     private static void employeePunchInOut() {
         //Employee class
         Employee employee = new Employee("bill", 12332, "Manager", 40);
@@ -24,10 +26,11 @@ public class Main {
         String timeOut = scanner.nextLine();
         double punchOutTime = convertStringToDecimal(timeOut);
         employee.punchOut(punchOutTime);
-        System.out.println("You made total of "+ employee.getTotalPay());
-       // employee.getTotalPay();
+        System.out.println("You made total of " + employee.getTotalPay());
+        // employee.getTotalPay();
 
     }
+
     public static double convertStringToDecimal(String s) {
         String[] parts = s.split(":");
         int hour = Integer.parseInt(parts[0]);
@@ -36,7 +39,7 @@ public class Main {
     }
 
     private static void roomReservation() {
-        generateRooms();
+
         System.out.println("-----Welcome to our hotel:------");
         System.out.println("Please Enter your name");
         String customerName = scanner.nextLine().trim();
@@ -51,16 +54,39 @@ public class Main {
         reservation.setNumberOfNights(days);
         LocalDate dayOfWeek = LocalDate.now();
         DayOfWeek day = dayOfWeek.getDayOfWeek();
-       // System.out.println(day);
+        // System.out.println(day);
         boolean isWeekend = (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY);
         reservation.setIsWeekend(isWeekend);
-        System.out.println("Your total: " + reservation.getPrice());
+        System.out.println("Your total: $" + reservation.getPrice());
 
-        Room room = new Room();
-        room.checkIn();
-    }
-
-    private static void generateRooms() {
-       RoomManager roomManager = new RoomManager(10);
+        RoomManager roomManager = new RoomManager();
+        int roomCounter = 0;
+        if (roomManager.getAllRooms().isEmpty()) {
+            System.out.println("No Rooms are available");
+        } else {
+            //Reservation reservation1 = new Reservation();
+            for (Room c : roomManager.getAllRooms()) {
+                if (c.getPrice() == 139) {
+                    if (reservation.getRoomType().equalsIgnoreCase("king")) {
+                        roomCounter++;
+                    } else if (reservation.getRoomType().equalsIgnoreCase("double")) {
+                        roomCounter++;
+                    }
+                }
+            }
+            System.out.printf("%d %s Rooms Available", roomCounter, reservation.getRoomType());
+            System.out.println("Do you want to Check In y/N:");
+            String input = scanner.nextLine().trim();
+            if (input.equals("Y")) {
+                Random random = new Random();
+                int randomRoom = random.nextInt(roomCounter);
+                roomManager.checkInRoom(randomRoom);
+                System.out.println("You have successfully checked in!");
+            } else if (input.equals("N")) {
+                System.out.println("Not checked in.");
+            } else {
+                System.out.println("Invalid input. Please enter Y or N.");
+            }
+        }
     }
 }

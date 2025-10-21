@@ -7,9 +7,7 @@ public class Room {
     private boolean isDirty = false;
     private boolean isOccupied = false;
     private double price;
-public Room(){
 
-}
     public Room(int roomNumber,double price) {
     this.roomNumbers = roomNumber;
     this.price = price;

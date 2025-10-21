@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class Hotel {
     private String name;
-    private int nuberOfSuites;
+    private int numberOfSuites;
     private int numberOfRooms;
     private int bookedSuites;
     private int bookedBasicRooms;
     static Scanner scannner = new Scanner(System.in);
 
-    public Hotel(String name, int bookedBasicRooms, int bookedSuites, int numberOfRooms, int nuberOfSuites) {
+    public Hotel(String name, int bookedBasicRooms, int bookedSuites, int numberOfRooms, int numberOfSuites) {
         this.name = name;
         this.bookedBasicRooms = bookedBasicRooms;
         this.bookedSuites = bookedSuites;
         this.numberOfRooms = numberOfRooms;
-        this.nuberOfSuites = nuberOfSuites;
+        this.numberOfSuites = numberOfSuites;
     }
 
-    public Hotel(String name, int nuberOfSuites, int numberOfRooms) {
+    public Hotel(String name, int numberOfSuites, int numberOfRooms) {
         this.name = name;
-        this.nuberOfSuites = nuberOfSuites;
+        this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
     }
 

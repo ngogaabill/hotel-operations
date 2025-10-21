@@ -7,8 +7,8 @@ public class RoomManager {
     private ArrayList<Room> checkedOutRoom = new ArrayList<>();
 
     // constructor to create 5 rooms
-    public RoomManager(int nr) {
-        for (int i = 0; i <= nr; i++) {
+    public RoomManager() {
+        for (int i = 0; i < 10; i++) {
             double price = (i % 2 == 0) ? 139 : 124; //5 kings and 5 double
             rooms.add(new Room(i, price));
         }

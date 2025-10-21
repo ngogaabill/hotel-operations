@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-
 public class Employee {
     private int employeeId;
     private String name;
@@ -13,9 +12,10 @@ public class Employee {
 
     public Employee(String name, int employeeId, String department, double payRate) {
         this.name = name;
-        this.department = department;
         this.employeeId = employeeId;
+        this.department = department;
         this.payRate = payRate;
+        this.hoursWorked = 0.0;
 
     }
 

@@ -18,7 +18,6 @@ public class Reservation {
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
-
     public double getPrice() {
         if (!isWeekend()) {
             if (getRoomType().contains("king")) {

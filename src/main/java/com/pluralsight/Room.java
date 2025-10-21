@@ -9,7 +9,6 @@ public class Room {
     private double price;
 
     public Room() {
-
     }
 
     public int getRoomNumbers() {
@@ -36,7 +35,6 @@ public class Room {
         System.out.println("Room Checked In");
         isDirty = true;
         isOccupied = true;
-        int i = roomNumbers - 1;
 
     }
 
@@ -48,7 +46,9 @@ public class Room {
     }
 
     public void cleanroom() {
-        System.out.println("Room is Being Cleaned");
-
+        System.out.println("Room is Being Cleaned,After check out");
+        //update the room status after cleaning.
+        isOccupied = false;
+        isDirty = false;
     }
 }

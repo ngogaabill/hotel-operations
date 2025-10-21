@@ -53,14 +53,12 @@ public class Main {
         reservation.setNumberOfNights(days);
         LocalDate dayOfWeek = LocalDate.now();
         DayOfWeek day = dayOfWeek.getDayOfWeek();
-        System.out.println(day);
+       // System.out.println(day);
         boolean isWeekend = (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY);
         reservation.setIsWeekend(isWeekend);
         System.out.println("Your total: " + reservation.getPrice());
 
         Room room = new Room();
         room.checkIn();
-
-
     }
 }

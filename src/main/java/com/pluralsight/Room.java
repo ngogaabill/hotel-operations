@@ -1,14 +1,18 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class Room {
-    private int roomNumbers = 50;
-    // private HashMap<String,boolean> rooms;
-    private boolean isAvailable = true;
+    private int roomNumbers;
     private boolean isDirty = false;
     private boolean isOccupied = false;
     private double price;
+public Room(){
 
-    public Room() {
+}
+    public Room(int roomNumber,double price) {
+    this.roomNumbers = roomNumber;
+    this.price = price;
     }
 
     public int getRoomNumbers() {

@@ -11,11 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
         roomReservation();
-        employeePunchInOut();
-
-
+        //employeePunchInOut();
     }
-
     private static void employeePunchInOut() {
         //Employee class
         Employee employee = new Employee("bill", 12332, "Manager", 40);
@@ -39,6 +36,7 @@ public class Main {
     }
 
     private static void roomReservation() {
+        generateRooms();
         System.out.println("-----Welcome to our hotel:------");
         System.out.println("Please Enter your name");
         String customerName = scanner.nextLine().trim();
@@ -60,5 +58,9 @@ public class Main {
 
         Room room = new Room();
         room.checkIn();
+    }
+
+    private static void generateRooms() {
+       RoomManager roomManager = new RoomManager(10);
     }
 }

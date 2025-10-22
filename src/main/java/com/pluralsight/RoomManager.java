@@ -27,12 +27,13 @@ public class RoomManager {
     public void checkInRoom(int roomNumber) {
         for (int i = 0; i < rooms.size(); i++) {
             Room room = rooms.get(i);
-            if (room.getRoomNumbers() == roomNumber) {
+            if (room.getRoomNumber() == roomNumber) {
                 room.checkIn();
                 checkedOutRoom.add(room);
                 rooms.remove(i);
             }
         }
     }
+
 
 }

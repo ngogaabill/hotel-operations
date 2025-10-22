@@ -1,20 +1,18 @@
 package com.pluralsight;
 
-import java.util.ArrayList;
-
 public class Room {
-    private int roomNumbers;
+    private int roomNumber;
     private boolean isDirty = false;
     private boolean isOccupied = false;
     private double price;
 
     public Room(int roomNumber,double price) {
-    this.roomNumbers = roomNumber;
+    this.roomNumber = roomNumber;
     this.price = price;
     }
 
-    public int getRoomNumbers() {
-        return roomNumbers;
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
     public double getPrice() {
@@ -34,7 +32,7 @@ public class Room {
     }
 
     public void checkIn() {
-        System.out.println("Room Checked In");
+        System.out.println("You have successfully checked in!");
         isDirty = true;
         isOccupied = true;
 
@@ -53,4 +51,9 @@ public class Room {
         isOccupied = false;
         isDirty = false;
     }
+    @Override
+    public String toString() {
+        return "Room #" + roomNumber + " | Price: $" + price + " per night ";
+    }
+
 }

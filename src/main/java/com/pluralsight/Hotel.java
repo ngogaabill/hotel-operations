@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hotel {
@@ -8,6 +9,7 @@ public class Hotel {
     private int numberOfRooms;
     private int bookedSuites;
     private int bookedBasicRooms;
+    private ArrayList<Room> bookedInventory;
     static Scanner scannner = new Scanner(System.in);
 
     public Hotel(String name, int bookedBasicRooms, int bookedSuites, int numberOfRooms, int numberOfSuites) {
@@ -24,9 +26,12 @@ public class Hotel {
         this.numberOfRooms = numberOfRooms;
     }
 
+    public void loadBookedInventory(ArrayList<Room> r) {
+        this.bookedInventory = r;
+    }
+
     public boolean bookRoom(int numberOfRooms, boolean isSuites) {
-        System.out.println("Enter number of rooms to book");
-        int roomToBook = scannner.nextInt();
+
         return true;
     }
 
